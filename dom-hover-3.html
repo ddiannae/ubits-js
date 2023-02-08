@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipula el DOM con JS</title>
+</head>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 50px;
+    }
+    #div-control {
+        padding: 10px;
+        background-color: pink;
+        color: indigo;
+        font-size: 25px;
+        cursor: pointer;
+    }
+
+    #div-hover {
+        background-color: navy;
+        margin: 20px auto;
+        width: 50%;
+        font-size: 50px;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .esconder {
+        display: none;
+    }
+</style>
+<body>
+    <h1>Despliega elementos con hover</h1>
+    <div id="div-control">Pon el mouse sobre este elemento</div>
+    <div id="div-hover" class="esconder">Hola!</div>
+    <script>
+        // Traemos los dos elementos div de HTML a JS
+        let control = document.getElementById("div-control");
+        let cont = document.getElementById("div-hover");
+
+        // Declaramos las funciones de listeners
+        function mostrar() {
+            cont.style.display = "block";
+        }
+
+        function esconder() {
+            cont.style.display = "none";
+        }
+
+        // Unimos elemento-evento y función de listener
+        control.addEventListener("mouseover", mostrar);
+        control.addEventListener("mouseout", esconder);
+    </script>
+</body>
+</html>

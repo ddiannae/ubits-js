@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Manipula el DOM con JS</title>
+    </head>
+    <style>
+        body {
+           font-family: Arial, Helvetica, sans-serif; 
+           padding: 50px;
+        }
+        .button {
+            border: none;
+            text-decoration: none;
+            background-color: green;
+            color: white;
+            font-size: 18px;
+            padding: 20px;
+        }
+    </style>
+    <body>
+        <h1 id="titulo">Hola!</h1>
+        <button id="mi-boton" class="button">Haz click</button>
+        <script> 
+            // Traemos el elemento con id "mi-boton" de HTML a JS
+            let btn = document.getElementById("mi-boton");
+            
+            // Declaramos la función listener
+            function hacerClick() {
+                let t1 = document.getElementById("titulo");
+                if (t1.innerText == "Hola!") {
+                    t1.innerText = "Bienvenid@s a Ubits";
+                } else {
+                    t1.innerText = "Hola!";
+                }
+                
+            }
+
+            // Unimos el evento de click del elemento con el listener
+            btn.addEventListener("click", hacerClick);
+        </script>
+    </body>
+</html>
